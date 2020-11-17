@@ -14,3 +14,8 @@ body {
 h1 {
   text-align: center;
 }
+#dinophoto { 
+  width: 60%;
+  margin: auto;
+  display: block;
+}

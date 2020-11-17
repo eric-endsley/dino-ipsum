@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({                                                                                                                                
       title: "Dino Ipsum",
       template: "./src/index.html",
       inject: "body",
@@ -32,6 +32,25 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
+      },
+      {
+        test: /\.(gif|png|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/img/'
+            }
+          }
+        ]
+      },
+      
+      {
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
       },
     ],
   },
