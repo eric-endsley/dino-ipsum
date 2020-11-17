@@ -1,0 +1,16 @@
+#results {
+  background-color:#189AB4;
+  color: #D4F1F4;
+}
+.output {
+  text-align: center;
+  width: 100px;
+  height: 200px;
+  color: #05445E;
+}
+body {
+  background-color: #75E6DA;
+}
+h1 {
+  text-align: center;
+}
