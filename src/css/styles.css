@@ -4,8 +4,6 @@
 }
 .output {
   text-align: center;
-  width: 100px;
-  height: 200px;
   color: #05445E;
 }
 body {
@@ -14,8 +12,19 @@ body {
 h1 {
   text-align: center;
 }
-#dinophoto { 
-  width: 60%;
-  margin: auto;
-  display: block;
+.image {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+img { 
+  width: 30%;
+}
+#userInput {
+  text-align: center;
+  object-position: center;
+}
+
+p {
+  text-align: center;
 }

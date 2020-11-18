@@ -6,17 +6,26 @@ import DinoIpsum from './dino-ipsum.js';
 
 $(document).ready(function() {
   $('#results').click(function() {
-    let numberP = $('#paragraphs').val();
     // clearFields();
-    let numberW = $('#words').val();
-    let promise = DinoIpsum.getDinos(numberP, numberW); 
+    let promise = DinoIpsum.getDinos(); 
     promise.then(function(response) {
       const body = JSON.parse(response); 
-      console.log(body);
-      for (let i = 0; i < body.length; i++) {
-        $('.output').append(`${body[i].join(" ")}` + `<br>` + `<br>`);
-      // $('.output').html(`${body.join(' ')}`);
+      console.log(body); 
+      let input = $('#userInput').val().toLowerCase();
+      let letterArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
+      if (letterArray.includes(input)) {
+        for (let i = 0; i < letterArray.length; i++)
+          if (letterArray[i] === input) {
+            $('.output').text(`${body[0][i]}`);
+          }
+      } else {
+        $('.output').text("Please enter a letter!");
       }
+      // for (let i = 0; i < body.length; i++) {
+        
+      //   $('.output').append(`${body[i].join(" ")}` + `<br>` + `<br>`);
+      // // $('.output').html(`${body.join(' ')}`);
+      
     }, 
     function(error) {
       $(".showErrors").text(`There was an error processing your request ${error}`);
